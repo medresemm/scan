@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/settings_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/headerSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/btnBackSettings"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/back"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/settings"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_settings_card"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="18dp">
+
+                <ImageView
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_icon_box"
+                    android:padding="13dp"
+                    android:src="@drawable/ic_scanner" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_name"
+                        android:textColor="@color/white"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/tagline"
+                        android:textColor="@color/settings_subtitle"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView style="@style/SettingsSection" android:text="@string/section_general" />
+
+            <LinearLayout
+                android:id="@+id/rowLanguage"
+                style="@style/SettingsRow"
+                android:background="@drawable/bg_settings_card">
+
+                <ImageView style="@style/SettingsIconBox" android:src="@drawable/ic_language" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView style="@style/SettingsTitle" android:text="@string/setting_app_language" />
+                    <TextView android:id="@+id/tvLanguageValue" style="@style/SettingsValue" />
+                </LinearLayout>
+
+                <ImageView style="@style/SettingsChevron" />
+            </LinearLayout>
+
+            <TextView style="@style/SettingsSection" android:text="@string/section_scan" />
+
+            <LinearLayout
+                android:id="@+id/rowFilter"
+                style="@style/SettingsRow"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_settings_card">
+
+                <ImageView style="@style/SettingsIconBox" android:src="@drawable/ic_camera" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView style="@style/SettingsTitle" android:text="@string/setting_default_filter" />
+                    <TextView android:id="@+id/tvFilterValue" style="@style/SettingsValue" />
+                </LinearLayout>
+
+                <ImageView style="@style/SettingsChevron" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rowQuality"
+                style="@style/SettingsRow"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_settings_card">
+
+                <ImageView
+                    style="@style/SettingsIconBox"
+                    android:backgroundTint="@color/icon_amber"
+                    android:src="@drawable/ic_tune" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView style="@style/SettingsTitle" android:text="@string/setting_pdf_quality" />
+                    <TextView android:id="@+id/tvQualityValue" style="@style/SettingsValue" />
+                </LinearLayout>
+
+                <ImageView style="@style/SettingsChevron" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rowOcrLang"
+                style="@style/SettingsRow"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_settings_card">
+
+                <ImageView
+                    style="@style/SettingsIconBox"
+                    android:backgroundTint="@color/icon_purple"
+                    android:src="@drawable/ic_language" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView style="@style/SettingsTitle" android:text="@string/setting_ocr_language" />
+                    <TextView android:id="@+id/tvOcrLangValue" style="@style/SettingsValue" />
+                </LinearLayout>
+
+                <ImageView style="@style/SettingsChevron" />
+            </LinearLayout>
+
+            <TextView style="@style/SettingsSection" android:text="@string/section_data" />
+
+            <LinearLayout
+                android:id="@+id/rowDeleteData"
+                style="@style/SettingsRow"
+                android:background="@drawable/bg_settings_card">
+
+                <ImageView
+                    style="@style/SettingsIconBox"
+                    android:backgroundTint="@color/icon_red"
+                    android:src="@drawable/ic_delete" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView style="@style/SettingsTitle" android:text="@string/setting_delete_data" />
+                    <TextView style="@style/SettingsValue" android:text="@string/setting_delete_data_desc" />
+                </LinearLayout>
+
+                <ImageView style="@style/SettingsChevron" />
+            </LinearLayout>
+
+            <TextView style="@style/SettingsSection" android:text="@string/section_about" />
+
+            <LinearLayout
+                android:id="@+id/rowPrivacy"
+                style="@style/SettingsRow"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_settings_card">
+
+                <ImageView style="@style/SettingsIconBox" android:src="@drawable/ic_shield" />
+
+                <TextView
+                    style="@style/SettingsTitle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:text="@string/privacy_policy" />
+
+                <ImageView style="@style/SettingsChevron" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rowWebsite"
+                style="@style/SettingsRow"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_settings_card">
+
+                <ImageView
+                    style="@style/SettingsIconBox"
+                    android:backgroundTint="@color/icon_green"
+                    android:src="@drawable/ic_language" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView style="@style/SettingsTitle" android:text="@string/official_website" />
+                    <TextView style="@style/SettingsValue" android:text="@string/website_url_display" />
+                </LinearLayout>
+
+                <ImageView style="@style/SettingsChevron" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rowShare"
+                style="@style/SettingsRow"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_settings_card">
+
+                <ImageView
+                    style="@style/SettingsIconBox"
+                    android:backgroundTint="@color/icon_green"
+                    android:src="@drawable/ic_share" />
+
+                <TextView
+                    style="@style/SettingsTitle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:text="@string/share_app" />
+
+                <ImageView style="@style/SettingsChevron" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rowRate"
+                style="@style/SettingsRow"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_settings_card">
+
+                <ImageView
+                    style="@style/SettingsIconBox"
+                    android:backgroundTint="@color/icon_amber"
+                    android:src="@drawable/ic_star" />
+
+                <TextView
+                    style="@style/SettingsTitle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:text="@string/rate_app" />
+
+                <ImageView style="@style/SettingsChevron" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rowContact"
+                style="@style/SettingsRow"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_settings_card">
+
+                <ImageView
+                    style="@style/SettingsIconBox"
+                    android:backgroundTint="@color/icon_purple"
+                    android:src="@drawable/ic_mail" />
+
+                <TextView
+                    style="@style/SettingsTitle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:text="@string/contact_support" />
+
+                <ImageView style="@style/SettingsChevron" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_settings_card"
+                android:orientation="vertical">
+
+                <LinearLayout style="@style/InfoRow">
+                    <TextView style="@style/InfoRowLabel" android:text="@string/setting_app_name_label" />
+                    <TextView android:id="@+id/tvAppNameValue" style="@style/InfoRowValue" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp"
+                    android:background="#1FFFFFFF" />
+
+                <LinearLayout style="@style/InfoRow">
+                    <TextView style="@style/InfoRowLabel" android:text="@string/version" />
+                    <TextView android:id="@+id/tvVersionValue" style="@style/InfoRowValue" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp"
+                    android:background="#1FFFFFFF" />
+
+                <LinearLayout style="@style/InfoRow">
+                    <TextView style="@style/InfoRowLabel" android:text="@string/setting_contact_label" />
+                    <TextView style="@style/InfoRowValue" android:text="@string/support_email_display" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

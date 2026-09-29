@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nibras_dark_navy"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="14dp">
+
+        <ImageButton
+            android:id="@+id/btnPrevPage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/back"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/tvPageIndicator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:text="1 / 8" />
+
+        <ImageButton
+            android:id="@+id/btnNextPage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:rotation="180"
+            android:src="@drawable/ic_back" />
+    </LinearLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pagerPages"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/chipOriginal"
+            style="@style/FilterChip"
+            android:text="@string/filter_original" />
+
+        <TextView
+            android:id="@+id/chipAuto"
+            style="@style/FilterChip"
+            android:text="@string/filter_auto" />
+
+        <TextView
+            android:id="@+id/chipBw"
+            style="@style/FilterChip"
+            android:text="@string/filter_bw" />
+
+        <TextView
+            android:id="@+id/chipGrayscale"
+            style="@style/FilterChip"
+            android:text="@string/filter_grayscale" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
+
+        <LinearLayout
+            android:id="@+id/btnCropPage"
+            style="@style/EditActionButton">
+            <ImageView style="@style/EditActionIcon" android:src="@drawable/ic_crop" />
+            <TextView style="@style/EditActionLabel" android:text="@string/crop_again" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnRotatePage"
+            style="@style/EditActionButton">
+            <ImageView style="@style/EditActionIcon" android:src="@drawable/ic_rotate" />
+            <TextView style="@style/EditActionLabel" android:text="@string/rotate" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnExtractText"
+            style="@style/EditActionButton">
+            <ImageView style="@style/EditActionIcon" android:src="@drawable/ic_text" />
+            <TextView style="@style/EditActionLabel" android:text="@string/extract_text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnDeletePage"
+            style="@style/EditActionButton">
+            <ImageView style="@style/EditActionIcon" android:src="@drawable/ic_delete" />
+            <TextView style="@style/EditActionLabel" android:text="@string/delete" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvThumbnails"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:clipToPadding="false" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/btnAddPage"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_card"
+            android:gravity="center"
+            android:text="@string/add_page"
+            android:textColor="@color/gray_dark"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btnCreatePdf"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bg_button_primary"
+            android:gravity="center"
+            android:text="@string/create_pdf"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>

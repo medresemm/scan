@@ -1,0 +1,59 @@
+name: Build
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HAS_KEYSTORE: ${{ secrets.KEYSTORE_BASE64 != '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Download Tesseract language data (only if not already in the repo)
+        run: |
+          mkdir -p app/src/main/assets/tessdata
+          for L in ara eng; do
+            if [ ! -s app/src/main/assets/tessdata/$L.traineddata ]; then
+              curl -L -o app/src/main/assets/tessdata/$L.traineddata https://github.com/tesseract-ocr/tessdata_fast/raw/main/$L.traineddata
+            fi
+          done
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 8.13
+
+      # Test APK (debug-signed) - for installing on your own phone.
+      - name: Build debug APK
+        run: gradle assembleDebug
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: NibrasScan-debug-apk
+          path: app/build/outputs/apk/debug/*.apk
+
+      # Play Store bundle (.aab) - only runs if you added the 4 signing secrets.
+      - name: Build signed release AAB
+        if: env.HAS_KEYSTORE == 'true'
+        env:
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > $RUNNER_TEMP/release.jks
+          export KEYSTORE_PATH=$RUNNER_TEMP/release.jks
+          gradle bundleRelease
+
+      - uses: actions/upload-artifact@v4
+        if: env.HAS_KEYSTORE == 'true'
+        with:
+          name: NibrasScan-release-aab
+          path: app/build/outputs/bundle/release/*.aab

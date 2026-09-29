@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.NibrasScan" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/nibras_bright_blue</item>
+        <item name="colorPrimaryDark">@color/nibras_dark_navy</item>
+        <item name="colorAccent">@color/nibras_cyan_glow</item>
+        <item name="android:statusBarColor">@color/nibras_dark_navy</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowBackground">@color/gray_light</item>
+    </style>
+
+    <style name="Theme.NibrasScan.Splash" parent="Theme.NibrasScan">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+</resources>

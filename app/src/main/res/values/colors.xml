@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="nibras_dark_navy">#0A1128</color>
+    <color name="nibras_deep_blue">#0D1B3E</color>
+    <color name="nibras_bright_blue">#2FB0FF</color>
+    <color name="nibras_cyan_glow">#5CE1FF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray_light">#F1F3F6</color>
+    <color name="gray_medium">#9AA5B1</color>
+    <color name="gray_dark">#3A3F47</color>
+    <color name="red_delete">#E53935</color>
+    <color name="overlay_scrim">#99000000</color>
+
+    <color name="icon_blue">#2FB0FF</color>
+    <color name="icon_green">#2ECC71</color>
+    <color name="icon_purple">#8E6CEF</color>
+    <color name="icon_amber">#F5B400</color>
+    <color name="icon_red">#E53935</color>
+    <color name="settings_card">#16224A</color>
+    <color name="settings_bg">#0A1128</color>
+    <color name="settings_subtitle">#8B96B8</color>
+</resources>

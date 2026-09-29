@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.NibrasScan.Splash" parent="Theme.NibrasScan">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowSplashScreenBackground">@color/nibras_dark_navy</item>
+    </style>
+</resources>
